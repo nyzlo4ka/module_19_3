@@ -1,0 +1,15 @@
+python manage.py shell
+from task1.models import Buyer
+b1 = Buyer.objects.create(name="Алексей", balance=1500.00, age=25)
+b2 = Buyer.objects.create(name="Мария", balance=500.00, age=17)
+b3 = Buyer.objects.create(name="Олег", balance=2500.00, age=30)
+from task1.models import Game
+g1 = Game.objects.create(title="Приключения", cost=300.00, size=1.5, 
+     description="Классическая игра o приключениях", age_limited=False)
+g2 = Game.objects.create(title="Загадки старца", cost=500.00, size=2.0, 
+     description="Игра-головоломка", age_limited=True)
+g3 = Game.objects.create(title="Gred", cost=400.00, size=1.2, 
+     description="Участвуйте в гонках на различных трассах", age_limited=True)
+g1.buyer.set([b1, b2, b3])
+g2.buyer.set([b1])
+g3.buyer.set([b1, b3])

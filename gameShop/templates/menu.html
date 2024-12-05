@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+        <h1></h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+        <p><a href="http://127.0.0.1:8000/home">Главная</a></p>
+        <p><a href="http://127.0.0.1:8000/home/game">Игры</a></p>
+        <p><a href="http://127.0.0.1:8000/home/cart">Корзина</a></p>
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
